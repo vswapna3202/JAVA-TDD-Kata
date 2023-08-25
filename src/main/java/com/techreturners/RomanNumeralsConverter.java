@@ -3,26 +3,17 @@ package com.techreturners;
 public class RomanNumeralsConverter {
 
     public Object convert(int decimalNumber) {
-        char romanCharI = 'I';
-        char romanCharV = 'V';
-        String result = "";
-        for (int i=0;i<decimalNumber;i++){
-            result += romanCharI;
-            int numberOfOccurence = countOccurence(result, romanCharI);
-            if (numberOfOccurence > 3){
-                result = String.valueOf(romanCharI)+String.valueOf(romanCharV);
-            }
-        }
-        return result;
-    }
 
-    private int countOccurence(String result, char target) {
-        int count = 0;
-        for (char c : result.toCharArray()){
-            if (c == target){
-                count += 1;
+        String[] romanChars = {"V","IV","I"};
+        int[] decimalValues = {5,4,1};
+
+        StringBuilder romanNumber = new StringBuilder();
+        for (int i=0;i<decimalValues.length;i++){
+            while(decimalNumber >= decimalValues[i]) {
+                decimalNumber -= decimalValues[i];
+                romanNumber.append(romanChars[i]);
             }
         }
-        return count;
+        return romanNumber.toString();
     }
 }

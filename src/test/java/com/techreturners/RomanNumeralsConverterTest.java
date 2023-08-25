@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsConverterTest {
-    /*
+
     @Test
     public void convertOneToNumber(){
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
@@ -22,12 +22,18 @@ public class RomanNumeralsConverterTest {
     public void convertThreeToNumber(){
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("III", romanNumeralsConverter.convert(3));
-    }*/
+    }
 
     @Test
     public void convertFourToNumber(){
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("IV", romanNumeralsConverter.convert(4));
+    }
+
+    @Test
+    public void convertFiveToNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("V", romanNumeralsConverter.convert(5));
     }
 
 }
