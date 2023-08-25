@@ -42,4 +42,10 @@ public class RomanNumeralsConverterTest {
         assertEquals("VIII", romanNumeralsConverter.convert(8));
     }
 
+    @Test
+    public void convertNineToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("IX", romanNumeralsConverter.convert(9));
+    }
+
 }
