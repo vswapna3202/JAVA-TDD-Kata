@@ -108,4 +108,10 @@ public class RomanNumeralsConverterTest {
         assertEquals("M", romanNumeralsConverter.convert(1000));
     }
 
+    @Test
+    public void convertTwoThousandNineHundredAndNinetyNineToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("MMCMXCIX", romanNumeralsConverter.convert(2999));
+    }
+
 }
