@@ -114,4 +114,10 @@ public class RomanNumeralsConverterTest {
         assertEquals("MMCMXCIX", romanNumeralsConverter.convert(2999));
     }
 
+    @Test
+    public void checkZeroAsInvalidInputForRomanNumberConversion(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("Invalid Input!", romanNumeralsConverter.convert(0));
+    }
+
 }
