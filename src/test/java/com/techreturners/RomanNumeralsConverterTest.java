@@ -131,4 +131,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(4000));
     }
+
+    @Test
+    public void convertNumber3999ToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("MMMCMXCIX", romanNumeralsConverter.convert(3999));
+    }
 }
