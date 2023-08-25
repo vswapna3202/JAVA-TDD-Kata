@@ -126,4 +126,9 @@ public class RomanNumeralsConverterTest {
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(-10));
     }
 
+    @Test
+    public void checkNumberGreateThan3999AsInvalidInputForRomanNumberConversion(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("Invalid Input!", romanNumeralsConverter.convert(4000));
+    }
 }

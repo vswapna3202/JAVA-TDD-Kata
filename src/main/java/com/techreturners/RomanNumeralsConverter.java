@@ -4,7 +4,7 @@ public class RomanNumeralsConverter {
 
     public Object convert(int decimalNumber) {
 
-        if (decimalNumber <= 0){
+        if (decimalNumber <= 0 || decimalNumber > 3999){
             return "Invalid Input!";
         }
 
