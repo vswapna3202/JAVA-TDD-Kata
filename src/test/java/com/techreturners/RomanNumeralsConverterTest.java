@@ -59,4 +59,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("XXX", romanNumeralsConverter.convert(30));
     }
+
+    @Test
+    public void convertFortyToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("XL", romanNumeralsConverter.convert(40));
+    }
 }
