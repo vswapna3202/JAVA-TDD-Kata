@@ -83,4 +83,16 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("C", romanNumeralsConverter.convert(100));
     }
+
+    @Test
+    public void convertFourHundredToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("CD", romanNumeralsConverter.convert(400));
+    }
+
+    @Test
+    public void convertFiveHundredToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("D", romanNumeralsConverter.convert(500));
+    }
 }
