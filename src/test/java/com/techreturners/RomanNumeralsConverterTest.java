@@ -48,4 +48,10 @@ public class RomanNumeralsConverterTest {
         assertEquals("IX", romanNumeralsConverter.convert(9));
     }
 
+    @Test
+    public void convertTenToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("X", romanNumeralsConverter.convert(10));
+    }
+
 }
