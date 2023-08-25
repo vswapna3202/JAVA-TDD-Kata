@@ -120,4 +120,10 @@ public class RomanNumeralsConverterTest {
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(0));
     }
 
+    @Test
+    public void checkNegativeNumberAsInvalidInputForRomanNumberConversion(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("Invalid Input!", romanNumeralsConverter.convert(-10));
+    }
+
 }
