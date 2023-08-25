@@ -101,4 +101,11 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("CM", romanNumeralsConverter.convert(900));
     }
+
+    @Test
+    public void convertOneThousandToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("M", romanNumeralsConverter.convert(1000));
+    }
+
 }
