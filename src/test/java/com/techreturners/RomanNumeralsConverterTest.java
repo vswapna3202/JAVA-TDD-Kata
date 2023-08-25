@@ -95,4 +95,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("D", romanNumeralsConverter.convert(500));
     }
+
+    @Test
+    public void convertNineHundredToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("CM", romanNumeralsConverter.convert(900));
+    }
 }
