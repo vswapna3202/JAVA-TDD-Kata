@@ -4,8 +4,8 @@ public class RomanNumeralsConverter {
 
     public Object convert(int decimalNumber) {
 
-        String[] romanChars = {"XL", "X", "IX", "V", "IV", "I"};
-        int[] decimalValues = {40, 10, 9, 5, 4, 1};
+        String[] romanChars = {"L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] decimalValues = {50, 40, 10, 9, 5, 4, 1};
 
         StringBuilder romanNumber = new StringBuilder();
         for (int i=0;i<decimalValues.length;i++){
