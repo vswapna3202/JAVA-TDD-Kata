@@ -71,4 +71,16 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("L", romanNumeralsConverter.convert(50));
     }
+
+    @Test
+    public void convertNinetyToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("XC", romanNumeralsConverter.convert(90));
+    }
+
+    @Test
+    public void convertHundredToRomanNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("C", romanNumeralsConverter.convert(100));
+    }
 }
