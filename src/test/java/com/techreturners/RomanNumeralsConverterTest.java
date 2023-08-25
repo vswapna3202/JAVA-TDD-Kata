@@ -16,4 +16,11 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("II", romanNumeralsConverter.convert(2));
     }
+
+    @Test
+    public void convertThreeToNumber(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("III", romanNumeralsConverter.convert(3));
+    }
+
 }
