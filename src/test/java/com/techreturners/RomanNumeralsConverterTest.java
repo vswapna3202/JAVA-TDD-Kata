@@ -1,140 +1,125 @@
 package com.techreturners;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsConverterTest {
 
+    private static RomanNumeralsConverter romanNumeralsConverter;
+    @BeforeAll
+    public static void setUpBeforeAll(){
+        romanNumeralsConverter = new RomanNumeralsConverter();
+    }
+
     @Test
     public void convertOneToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("I", romanNumeralsConverter.convert(1));
     }
 
     @Test
     public void convertTwoToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("II", romanNumeralsConverter.convert(2));
     }
 
     @Test
     public void convertThreeToNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("III", romanNumeralsConverter.convert(3));
     }
 
     @Test
     public void convertFourToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("IV", romanNumeralsConverter.convert(4));
     }
 
     @Test
     public void convertFiveToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("V", romanNumeralsConverter.convert(5));
     }
 
     @Test
     public void convertEightToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("VIII", romanNumeralsConverter.convert(8));
     }
 
     @Test
     public void convertNineToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("IX", romanNumeralsConverter.convert(9));
     }
 
     @Test
     public void convertTenToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("X", romanNumeralsConverter.convert(10));
     }
 
     @Test
     public void convertThirtyToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("XXX", romanNumeralsConverter.convert(30));
     }
 
     @Test
     public void convertFortyToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("XL", romanNumeralsConverter.convert(40));
     }
 
     @Test
     public void convertFiftyToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("L", romanNumeralsConverter.convert(50));
     }
 
     @Test
     public void convertNinetyToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("XC", romanNumeralsConverter.convert(90));
     }
 
     @Test
     public void convertHundredToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("C", romanNumeralsConverter.convert(100));
     }
 
     @Test
     public void convertFourHundredToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("CD", romanNumeralsConverter.convert(400));
     }
 
     @Test
     public void convertFiveHundredToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("D", romanNumeralsConverter.convert(500));
     }
 
     @Test
     public void convertNineHundredToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("CM", romanNumeralsConverter.convert(900));
     }
 
     @Test
     public void convertOneThousandToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("M", romanNumeralsConverter.convert(1000));
     }
 
     @Test
     public void convertTwoThousandNineHundredAndNinetyNineToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("MMCMXCIX", romanNumeralsConverter.convert(2999));
     }
 
     @Test
     public void checkZeroAsInvalidInputForRomanNumberConversion(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(0));
     }
 
     @Test
     public void checkNegativeNumberAsInvalidInputForRomanNumberConversion(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(-10));
     }
 
     @Test
     public void checkNumberGreateThan3999AsInvalidInputForRomanNumberConversion(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("Invalid Input!", romanNumeralsConverter.convert(4000));
     }
 
     @Test
     public void convertNumber3999ToRomanNumber(){
-        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("MMMCMXCIX", romanNumeralsConverter.convert(3999));
     }
 }

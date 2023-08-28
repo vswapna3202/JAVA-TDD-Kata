@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 public class RomanNumeralsConverter {
 
-    public Object convert(int decimalNumber) {
+    public String convert(int decimalNumber) {
         try {
             if (decimalNumber <= 0 || decimalNumber > 3999) {
                 return "Invalid Input!";
