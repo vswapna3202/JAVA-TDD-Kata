@@ -68,6 +68,39 @@ public class BowlingGameTest {
         assertEquals(150,bowlingGame.calculateScore());
     }
 
+    @Test
+    public void checkFullGame(){
+        //Frame 1 Input
+        bowlingGame.rollPins(1);
+        bowlingGame.rollPins(4);
+        //Frame 2 Input
+        bowlingGame.rollPins(4);
+        bowlingGame.rollPins(5);
+        //Frame 3 Input
+        bowlingGame.rollPins(6);
+        bowlingGame.rollPins(4);
+        //Frame 4 Input
+        bowlingGame.rollPins(5);
+        bowlingGame.rollPins(5);
+        //Frame 5 Input - Strike
+        rollStrike();
+        //Frame 6 Input
+        bowlingGame.rollPins(0);
+        bowlingGame.rollPins(1);
+        //Frame 7 Input
+        rollSpare();
+        //Frame 8 Input
+        bowlingGame.rollPins(6);
+        bowlingGame.rollPins(4);
+        //Frame 9 Input
+        rollStrike();
+        //Frame 10 Input
+        bowlingGame.rollPins(2);
+        bowlingGame.rollPins(8);
+        bowlingGame.rollPins(6);
+        assertEquals(133,bowlingGame.calculateScore());
+    }
+
     public void rollStrike(){
         bowlingGame.rollPins(10);
     }
