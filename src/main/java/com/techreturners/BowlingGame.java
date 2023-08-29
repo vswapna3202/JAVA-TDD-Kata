@@ -12,7 +12,11 @@ public class BowlingGame {
         int frameLength = 10;
         int scoreIndex = 0;
         for (int i=0; i < frameLength; i++){
-            if (bowlingScores[scoreIndex] + bowlingScores[scoreIndex+1] == 10){
+            if (bowlingScores[scoreIndex] == 10){
+                score += 10 + bowlingScores[scoreIndex + 1]
+                        + bowlingScores [scoreIndex + 2];
+                scoreIndex++;
+            } else if (isaSpare(scoreIndex)){
                 //this is a spare
                 score += 10 + bowlingScores[scoreIndex+2];
                 scoreIndex += 2;
@@ -23,6 +27,10 @@ public class BowlingGame {
 
         }
         return score;
+    }
+
+    private boolean isaSpare(int scoreIndex) {
+        return bowlingScores[scoreIndex] + bowlingScores[scoreIndex + 1] == 10;
     }
 
 }

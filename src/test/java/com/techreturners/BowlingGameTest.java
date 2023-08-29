@@ -34,10 +34,24 @@ public class BowlingGameTest {
 
     @Test
     public void checkWhenScoreHasASpare(){
-        bowlingGame.rollPins(7);
-        bowlingGame.rollPins(3);
+        rollSpare();
         bowlingGame.rollPins(5);
         rollManyPins(17, 0);
         assertEquals(20, bowlingGame.calculateScore());
     }
+    public void rollSpare(){
+        bowlingGame.rollPins(7);
+        bowlingGame.rollPins(3);
+    }
+
+    @Test
+    public void checkWhenScoreIsAStrike(){
+        bowlingGame.rollPins(10);
+        bowlingGame.rollPins(3);
+        bowlingGame.rollPins(4);
+        rollManyPins(16, 0);
+        assertEquals(24, bowlingGame.calculateScore());
+    }
+
+
 }
