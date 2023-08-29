@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BowlingGameTest {
+
     private BowlingGame bowlingGame;
 
     @BeforeEach
@@ -15,9 +16,32 @@ public class BowlingGameTest {
 
     @Test
     public void checkWhenScoreIsAllZeros(){
-        for (int i=0;i<20; i++){
+        for (int i =0; i < 20; i++){
             bowlingGame.rollPins(0);
         }
-        assertEquals(0,bowlingGame.calculateScore());
+
+        assertEquals(0, bowlingGame.calculateScore());
     }
+
+    @Test
+    public void checkWhenScoreIsAllOnes(){
+        for (int i =0; i < 20; i++){
+            bowlingGame.rollPins(1);
+        }
+
+        assertEquals(20, bowlingGame.calculateScore());
+    }
+
+    @Test
+    public void checkWhenScoreHasSpare(){
+        bowlingGame.rollPins(7);
+        bowlingGame.rollPins(3);
+        bowlingGame.rollPins(5);
+        for (int i =0; i < 17; i++){
+            bowlingGame.rollPins(0);
+        }
+
+        assertEquals(20, bowlingGame.calculateScore());
+    }
+
 }
