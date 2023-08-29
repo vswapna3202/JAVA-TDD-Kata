@@ -16,17 +16,19 @@ public class BowlingGameTest {
 
     @Test
     public void checkWhenScoreIsAllZeros(){
-        for (int i=0; i < 20; i++) {
-            bowlingGame.rollPins(0);
-        }
+        rollManyPins(20, 0);
         assertEquals(0, bowlingGame.calculateScore());
     }
 
     @Test
     public void checkWhenScoreIsAllOnes(){
-        for (int i=0; i < 20; i++) {
-            bowlingGame.rollPins(1);
-        }
+        rollManyPins(20, 1);
         assertEquals(20, bowlingGame.calculateScore());
+    }
+
+    public void rollManyPins(int numberOfTimes, int score){
+        for (int i=0; i < numberOfTimes; i++) {
+            bowlingGame.rollPins(score);
+        }
     }
 }
