@@ -21,4 +21,12 @@ public class BowlingGameTest {
         }
         assertEquals(0, bowlingGame.calculateScore());
     }
+
+    @Test
+    public void checkWhenScoreIsAllOnes(){
+        for (int i=0; i < 20; i++) {
+            bowlingGame.rollPins(1);
+        }
+        assertEquals(20, bowlingGame.calculateScore());
+    }
 }

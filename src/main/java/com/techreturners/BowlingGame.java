@@ -8,7 +8,11 @@ public class BowlingGame {
     }
 
     public int calculateScore(){
-        return 0;
+        int score = 0;
+        for (int i=0; i < bowlingScores.length; i++){
+            score += bowlingScores[i];
+        }
+        return score;
     }
 
 }
