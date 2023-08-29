@@ -59,6 +59,25 @@ public class BowlingGameTest {
         assertEquals(300,bowlingGame.calculateScore());
     }
 
+    @Test
+    public void checkWhenNineHitsAndOneMiss(){
+        for(int i=0; i < 10; i++) {
+            bowlingGame.rollPins(9);
+            bowlingGame.rollPins(0);
+        }
+        assertEquals(90,bowlingGame.calculateScore());
+    }
+
+    @Test
+    public void checkWhenAllFivesAndSpareAndOneExtraFive(){
+        for(int i=0; i < 10; i++) {
+            bowlingGame.rollPins(5);
+            bowlingGame.rollPins(5);
+        }
+        bowlingGame.rollPins(5);
+        assertEquals(150,bowlingGame.calculateScore());
+    }
+
     public void rollStrike(){
         bowlingGame.rollPins(10);
     }
