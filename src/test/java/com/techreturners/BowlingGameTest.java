@@ -31,4 +31,13 @@ public class BowlingGameTest {
             bowlingGame.rollPins(score);
         }
     }
+
+    @Test
+    public void checkWhenScoreHasASpare(){
+        bowlingGame.rollPins(7);
+        bowlingGame.rollPins(3);
+        bowlingGame.rollPins(5);
+        rollManyPins(17, 0);
+        assertEquals(20, bowlingGame.calculateScore());
+    }
 }
