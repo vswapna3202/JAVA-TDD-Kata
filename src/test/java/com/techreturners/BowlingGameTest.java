@@ -46,11 +46,21 @@ public class BowlingGameTest {
 
     @Test
     public void checkWhenScoreIsAStrike(){
-        bowlingGame.rollPins(10);
+        rollStrike();
         bowlingGame.rollPins(3);
         bowlingGame.rollPins(4);
         rollManyPins(16, 0);
         assertEquals(24, bowlingGame.calculateScore());
+    }
+
+    @Test
+    public void checkWhenTwelveStrikes(){
+        rollManyPins(12, 10);
+        assertEquals(300,bowlingGame.calculateScore());
+    }
+
+    public void rollStrike(){
+        bowlingGame.rollPins(10);
     }
 
 
