@@ -22,11 +22,10 @@ public class BowlingGame {
                 score += 10 + bowlingScores[scoreIndex+2];
                 scoreIndex += 2;
             } else {
-                //this is a miss
+                //this has a miss
                 score += bowlingScores[scoreIndex] + bowlingScores[scoreIndex+1];
                 scoreIndex += 2;
             }
-
         }
         return score;
     }

@@ -26,22 +26,12 @@ public class BowlingGameTest {
         assertEquals(20, bowlingGame.calculateScore());
     }
 
-    public void rollManyPins(int numberOfTimes, int score){
-        for (int i=0; i < numberOfTimes; i++) {
-            bowlingGame.rollPins(score);
-        }
-    }
-
     @Test
     public void checkWhenScoreHasASpare(){
         rollSpare();
         bowlingGame.rollPins(5);
         rollManyPins(17, 0);
         assertEquals(20, bowlingGame.calculateScore());
-    }
-    public void rollSpare(){
-        bowlingGame.rollPins(7);
-        bowlingGame.rollPins(3);
     }
 
     @Test
@@ -82,5 +72,15 @@ public class BowlingGameTest {
         bowlingGame.rollPins(10);
     }
 
+    public void rollManyPins(int numberOfTimes, int score){
+        for (int i=0; i < numberOfTimes; i++) {
+            bowlingGame.rollPins(score);
+        }
+    }
+
+    public void rollSpare(){
+        bowlingGame.rollPins(7);
+        bowlingGame.rollPins(3);
+    }
 
 }
