@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsConverterTest {
-
     private static RomanNumeralsConverter romanNumeralsConverter;
     @BeforeAll
     public static void setUpBeforeAll(){
