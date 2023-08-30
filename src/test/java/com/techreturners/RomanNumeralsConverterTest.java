@@ -122,4 +122,9 @@ public class RomanNumeralsConverterTest {
     public void convertNumber3999ToRomanNumber(){
         assertEquals("MMMCMXCIX", romanNumeralsConverter.convertToRoman(3999));
     }
+
+    @Test
+    public void convertRomanNumberToDecimal(){
+        assertEquals(3999, romanNumeralsConverter.convertToDecimal("MMMCMXCIX"));
+    }
 }

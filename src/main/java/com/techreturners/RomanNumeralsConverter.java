@@ -26,5 +26,23 @@ public class RomanNumeralsConverter {
         }
     }
 
+    public int convertToDecimal(String romanNumber){
+        if (romanNumber == null || romanNumber.isEmpty()){
+            throw new IllegalArgumentException("Invalid Input!");
+        }
+        int decimalNumber =0;
+        int index = 0;
+
+        while (index < romanNumber.length()){
+            for (int i=0; i < romanChars.length; i++){
+                String currentSymbol = romanChars[i];
+                while(romanNumber.startsWith(currentSymbol, index)){
+                    decimalNumber += decimalValues[i];
+                    index += currentSymbol.length();
+                }
+            }
+        }
+        return decimalNumber;
+    }
 
 }
