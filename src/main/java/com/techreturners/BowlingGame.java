@@ -1,12 +1,12 @@
 package com.techreturners;
 
 public class BowlingGame {
-    private int[] bowlingScores;
-    private int index;
+    private final int[] bowlingScores;
+    private int rollIndex;
 
     public BowlingGame() {
         bowlingScores = new int[21];
-        index = 0;
+        rollIndex = 0;
     }
 
     /*
@@ -15,12 +15,12 @@ public class BowlingGame {
      */
     public void rollPins(String score){
         if (score.equals("X"))
-            bowlingScores[index++] = 10;
+            bowlingScores[rollIndex++] = 10;
         else if (score.equals("/")){
-            int prevValue = bowlingScores[index-1];
-            bowlingScores[index++] = 10 - prevValue;
+            int prevValue = bowlingScores[rollIndex-1];
+            bowlingScores[rollIndex++] = 10 - prevValue;
         }else
-            bowlingScores[index++] = Integer.parseInt(score);
+            bowlingScores[rollIndex++] = Integer.parseInt(score);
     }
 
     /*

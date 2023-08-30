@@ -130,7 +130,6 @@ public class BowlingGameTest {
     /*
     This method rolls Pin to get a perfect score of 10 which is a strike
      */
-
     public void rollStrike(){
         bowlingGame.rollPins("X");
     }
