@@ -1,15 +1,26 @@
 package com.techreturners;
 
 public class BowlingGame {
-    private int[] bowlingScores = new int[21];
-    int index = 0;
+    private int[] bowlingScores;
+    private int index;
+
+    public BowlingGame() {
+        bowlingScores = new int[21];
+        index = 0;
+    }
 
     /*
     This method assigns the parameter score to bowlingScores Array
     holding all the scores of a game
      */
-    public void rollPins(int score){
-        bowlingScores[index++] = score;
+    public void rollPins(String score){
+        if (score.equals("X"))
+            bowlingScores[index++] = 10;
+        else if (score.equals("/")){
+            int prevValue = bowlingScores[index-1];
+            bowlingScores[index++] = 10 - prevValue;
+        }else
+            bowlingScores[index++] = Integer.parseInt(score);
     }
 
     /*

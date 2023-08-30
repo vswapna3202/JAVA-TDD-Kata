@@ -19,7 +19,7 @@ public class BowlingGameTest {
      */
     @Test
     public void testAllZeros(){
-        rollManyPins(20, 0);
+        rollManyPins(20, "0");
         assertEquals(0, bowlingGame.calculateScore());
     }
 
@@ -28,7 +28,7 @@ public class BowlingGameTest {
      */
     @Test
     public void testAllOnes(){
-        rollManyPins(20, 1);
+        rollManyPins(20, "1");
         assertEquals(20, bowlingGame.calculateScore());
     }
 
@@ -38,9 +38,9 @@ public class BowlingGameTest {
      */
     @Test
     public void testSpare(){
-        rollSpare();
-        bowlingGame.rollPins(5);
-        rollManyPins(17, 0);
+        rollSpare("7");
+        bowlingGame.rollPins("5");
+        rollManyPins(17, "0");
         assertEquals(20, bowlingGame.calculateScore());
     }
 
@@ -51,9 +51,9 @@ public class BowlingGameTest {
     @Test
     public void testStrike(){
         rollStrike();
-        bowlingGame.rollPins(3);
-        bowlingGame.rollPins(4);
-        rollManyPins(16, 0);
+        bowlingGame.rollPins("3");
+        bowlingGame.rollPins("4");
+        rollManyPins(16, "0");
         assertEquals(24, bowlingGame.calculateScore());
     }
 
@@ -63,7 +63,7 @@ public class BowlingGameTest {
      */
     @Test
     public void testPerfectGame(){
-        rollManyPins(12, 10);
+        rollManyPins(12, "X");
         assertEquals(300,bowlingGame.calculateScore());
     }
 
@@ -74,8 +74,8 @@ public class BowlingGameTest {
     @Test
     public void testNineAndMiss(){
         for(int i=0; i < 10; i++) {
-            bowlingGame.rollPins(9);
-            bowlingGame.rollPins(0);
+            bowlingGame.rollPins("9");
+            bowlingGame.rollPins("0");
         }
         assertEquals(90,bowlingGame.calculateScore());
     }
@@ -87,10 +87,10 @@ public class BowlingGameTest {
     @Test
     public void testAllFivesSpareAndExtraFive(){
         for(int i=0; i < 10; i++) {
-            bowlingGame.rollPins(5);
-            bowlingGame.rollPins(5);
+            bowlingGame.rollPins("5");
+            bowlingGame.rollPins("/");
         }
-        bowlingGame.rollPins(5);
+        bowlingGame.rollPins("5");
         assertEquals(150,bowlingGame.calculateScore());
     }
 
@@ -101,47 +101,44 @@ public class BowlingGameTest {
     @Test
     public void testCustomGame(){
         //Frame 1 Input
-        bowlingGame.rollPins(1);
-        bowlingGame.rollPins(4);
+        bowlingGame.rollPins("1");
+        bowlingGame.rollPins("4");
         //Frame 2 Input
-        bowlingGame.rollPins(4);
-        bowlingGame.rollPins(5);
-        //Frame 3 Input
-        bowlingGame.rollPins(6);
-        bowlingGame.rollPins(4);
-        //Frame 4 Input
-        bowlingGame.rollPins(5);
-        bowlingGame.rollPins(5);
+        bowlingGame.rollPins("4");
+        bowlingGame.rollPins("5");
+        //Frame 3 Input has a spare
+        rollSpare("6");
+        //Frame 4 Input has a spare
+        rollSpare("5");
         //Frame 5 Input - Strike
         rollStrike();
         //Frame 6 Input
-        bowlingGame.rollPins(0);
-        bowlingGame.rollPins(1);
+        bowlingGame.rollPins("0");
+        bowlingGame.rollPins("1");
         //Frame 7 Input
-        rollSpare();
+        rollSpare("7");
         //Frame 8 Input
-        bowlingGame.rollPins(6);
-        bowlingGame.rollPins(4);
-        //Frame 9 Input
+        rollSpare("6");
+        //Frame 9 Input strike
         rollStrike();
-        //Frame 10 Input
-        bowlingGame.rollPins(2);
-        bowlingGame.rollPins(8);
-        bowlingGame.rollPins(6);
+        //Frame 10 Input has a spare and extra score of 6
+        rollSpare("2");
+        bowlingGame.rollPins("6");
         assertEquals(133,bowlingGame.calculateScore());
     }
 
     /*
     This method rolls Pin to get a perfect score of 10 which is a strike
      */
+
     public void rollStrike(){
-        bowlingGame.rollPins(10);
+        bowlingGame.rollPins("X");
     }
 
     /*
     This method rolls Pins numberOfTimes specified and assigns score
      */
-    public void rollManyPins(int numberOfTimes, int score){
+    public void rollManyPins(int numberOfTimes, String score){
         for (int i=0; i < numberOfTimes; i++) {
             bowlingGame.rollPins(score);
         }
@@ -150,9 +147,9 @@ public class BowlingGameTest {
     /*
     This method rolls a spare with total score of 10 with two tries
      */
-    public void rollSpare(){
-        bowlingGame.rollPins(7);
-        bowlingGame.rollPins(3);
+    public void rollSpare(String score){
+        bowlingGame.rollPins(score);
+        bowlingGame.rollPins("/");
     }
 
 }
