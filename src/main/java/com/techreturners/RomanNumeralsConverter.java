@@ -4,8 +4,8 @@ import java.util.InputMismatchException;
 
 public class RomanNumeralsConverter {
 
-    private static String[]  romanChars = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-    private static int[]  decimalValues = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static final String[]  romanChars = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    private static final int[]  decimalValues = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
     /* This method checks if decimal number is in range 1 to 3999 and
     converts it to a Roman Number
